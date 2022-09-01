@@ -1,0 +1,26 @@
+@import-normalize; /* bring in normalize.css styles */
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.active {
+  background-color: #f0f0f1;
+}
+#basic-menu a {
+  color: #4a4a4a;
+  text-decoration: none;
+}
+#basic-menu a:hover,
+#basic-menu a:focus {
+  color: #4a4a4a;
+}
