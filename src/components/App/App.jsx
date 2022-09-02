@@ -36,8 +36,8 @@ export const App = () => {
         <Route path="/" element={<PublicRoute restricted />}>
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
-          <Route path="logout" element={<Logout />} />
         </Route>
+        <Route path="logout" element={<Logout />} />
       </Route>
     </Routes>
   );

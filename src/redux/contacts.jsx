@@ -9,9 +9,12 @@ export const contactsSlice = createSlice({
   name: 'contacts',
   initialState,
   reducers: {
-    // addItems: (state, action) => {
-    //   state.items = [...state.items, action.payload];
-    // },
+    removeItems: state => {
+      state.items = initialState.items;
+    },
+    addItems: (state, { payload }) => {
+      state.items = [...state.items, payload];
+    },
   },
   extraReducers: builder => {
     //getContacts
@@ -25,12 +28,12 @@ export const contactsSlice = createSlice({
     builder.addMatcher(
       contactsApi.endpoints.addContact.matchFulfilled,
       (state, { payload }) => {
-        state.items = payload;
+        console.log(state.items);
+        state.items = [...state.items, payload];
       }
     );
   },
 });
-
-//export const { addItems, removeItems } = contactsSlice.actions;
+export const { removeItems, addItems } = contactsSlice.actions;
 
 export default contactsSlice.reducer;

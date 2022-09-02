@@ -1,12 +1,14 @@
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { Navigate } from 'react-router-dom';
 import { Rings } from 'react-loader-spinner';
 import Notiflix from 'notiflix';
 import { useLogoutMutation } from '../../redux/userApi';
+import { removeItems } from '../../redux/contacts';
 
 import Button from '@mui/material/Button';
 
 const Logout = () => {
+  const dispatch = useDispatch();
   const { name, email, token } = useSelector(state => state.user);
 
   const [logout, { isError, isLoading, isSuccess }] = useLogoutMutation();
@@ -19,6 +21,7 @@ const Logout = () => {
       'No',
       function okCb() {
         logout();
+        dispatch(removeItems());
       },
       function cancelCb() {}
     );

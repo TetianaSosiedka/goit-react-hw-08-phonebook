@@ -1,14 +1,13 @@
 import { useSelector } from 'react-redux';
 
-//import { useGetContactsQuery } from '../../redux/contactsApiSlice';
-
 import { List } from './ContactsList.styled';
 
 import ContactsItem from '../ContactsItem/ContactsItem';
+import { useGetContactsQuery } from '../../redux/contactsApi';
 
 const ContactList = () => {
-  //const { data: items = [] } = useGetContactsQuery('');
-  const items = useSelector(state => state.contacts.items);
+  //const items = useSelector(state => state.contacts.items);
+  const { data: items = [] } = useGetContactsQuery('');
   const filter = useSelector(state => state.filter.value);
 
   const handleVisiblyContacts = () => {
