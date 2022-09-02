@@ -28,7 +28,6 @@ export const contactsSlice = createSlice({
     builder.addMatcher(
       contactsApi.endpoints.addContact.matchFulfilled,
       (state, { payload }) => {
-        console.log(state.items);
         state.items = [...state.items, payload];
       }
     );

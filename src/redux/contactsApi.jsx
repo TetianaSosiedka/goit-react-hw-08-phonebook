@@ -26,7 +26,7 @@ export const contactsApi = createApi({
         method: 'POST',
         body: payload,
       }),
-      providesTags: ['Contacts'],
+      invalidatesTags: ['Contacts'],
     }),
     //useDeleteContactMutation
     deleteContact: builder.mutation({
