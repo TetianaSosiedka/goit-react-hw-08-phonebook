@@ -51,6 +51,7 @@ export const userApi = createApi({
       query: () => ({
         url: '/current',
       }),
+      providesTags: ['User'],
     }),
   }),
 });
